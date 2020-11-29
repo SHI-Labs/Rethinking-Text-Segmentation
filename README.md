@@ -30,6 +30,7 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 
 In this table, we report the performance of our TexRNet on 5 text segmentation dataset including ours. 
 
+<font size="11" face="Courier New">
 <table>
   <tr>
     <td></td>
@@ -75,16 +76,17 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
     <td>Ours: TexRNet + DeeplabV3+</td>
     <td>86.06</td><td>0.921</td>
     <td>72.16</td><td>0.835</td>
-    <td>69.54</td><td>0.627</td>
-    <td>83.49</td><td>0.838</td>
-    <td>76.23</td><td>0.832</td>
+    <td>73.98</td><td>0.722</td>
+    <td>86.31</td><td>0.830</td>
+    <td>76.53</td><td>0.844</td>
   </tr>
   <tr>
     <td>Ours: TexRNet + HRNetV2-W48</td>
-    <td>**86.84**</td><td>**0.924**</td>
-    <td>73.38</td><td>0.850</td>
-    <td>72.39</td><td>0.720</td>
-    <td>86.09</td><td>0.865</td>
-    <td>78.47</td><td>0.848</td>
+    <td><b>86.84</b></td><td><b>0.924</b></td>
+    <td><b>73.38</b></td><td><b>0.850</b></td>
+    <td>   72.39    </td><td>   0.720    </td>
+    <td>   86.09    </td><td><b>0.865</b></td>
+    <td><b>78.47</b></td><td><b>0.848</b></td>
   </tr>
 </table>
+</font>
