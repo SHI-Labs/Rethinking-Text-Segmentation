@@ -28,3 +28,6 @@ Text in the real world is extremely diverse, yet current text dataset does not r
   <img src=".figure/network.jpg" width="90%">
 </p>
 
+In this table, we report the performance of our TexRNet on 5 text segmentation dataset including ours. 
+| Method       | TextSeg (Ours) | ICDAR13 FST | COCO_TS | MLT_S | Total-Text |
+| :----------- | :------: | :------: | :------: | :-------: | :--------: | :-------: |
