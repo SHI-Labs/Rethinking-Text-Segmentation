@@ -10,19 +10,19 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 
 ## TextSeg Dataset
 
-# Image Collection
+### Image Collection
 
 <p align="center">
   <img src=".figure/image_only.jpg" width="99%">
 </p>
 
-# Annotation
+### Annotation
 
 <p align="center">
   <img src=".figure/image_anno.jpg" width="80%">
 </p>
 
-# Dataset Statistic
+### Dataset Statistic
 
 ## TexRNet Structure and Results
 
