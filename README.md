@@ -22,8 +22,6 @@ Text in the real world is extremely diverse, yet current text dataset does not r
   <img src=".figure/image_anno.jpg" width="65%">
 </p>
 
-### Dataset Statistic
-
 ## TexRNet Structure and Results
 
 <p align="center">
