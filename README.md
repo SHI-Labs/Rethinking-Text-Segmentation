@@ -74,11 +74,11 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
   </tr>
   <tr>
     <td>Ours: TexRNet + DeeplabV3+</td>
-    <td>86.06</td><td>0.921</td>
-    <td>72.16</td><td>0.835</td>
-    <td>73.98</td><td>0.722</td>
-    <td>86.31</td><td>0.830</td>
-    <td>76.53</td><td>0.844</td>
+    <td>   86.06    </td><td>   0.921    </td>
+    <td>   72.16    </td><td>   0.835    </td>
+    <td><b>73.98</b></td><td><b>0.722</b></td>
+    <td><b>86.31</b></td><td>   0.830    </td>
+    <td>   76.53    </td><td>   0.844    </td>
   </tr>
   <tr>
     <td>Ours: TexRNet + HRNetV2-W48</td>
