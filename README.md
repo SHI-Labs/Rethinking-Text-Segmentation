@@ -49,42 +49,42 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
   </tr>
   <tr>
     <td>DeeplabV3+</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
+    <td>84.07</td><td>0.914</td>
+    <td>69.27</td><td>0.802</td>
+    <td>72.07</td><td>0.641</td>
+    <td>84.63</td><td>0.837</td>
+    <td>74.44</td><td>0.824</td>
   </tr>
   <tr>
     <td>HRNetV2-W48</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
+    <td>85.03</td><td>0.914</td>
+    <td>70.98</td><td>0.822</td>
+    <td>68.93</td><td>0.629</td>
+    <td>83.26</td><td>0.836</td>
+    <td>75.29</td><td>0.825</td>
   </tr>
   <tr>
     <td>HRNetV2-W48 + OCR</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
+    <td>85.98</td><td>0.918</td>
+    <td>72.45</td><td>0.830</td>
+    <td>69.54</td><td>0.627</td>
+    <td>83.49</td><td>0.838</td>
+    <td>76.23</td><td>0.832</td>
   </tr>
   <tr>
     <td>Ours: TexRNet + DeeplabV3+</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
+    <td>86.06</td><td>0.921</td>
+    <td>72.16</td><td>0.835</td>
+    <td>69.54</td><td>0.627</td>
+    <td>83.49</td><td>0.838</td>
+    <td>76.23</td><td>0.832</td>
   </tr>
   <tr>
     <td>Ours: TexRNet + HRNetV2-W48</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
-    <td>fgIoU</td><td>F-score</td>
+    <td>**86.84**</td><td>**0.924**</td>
+    <td>73.38</td><td>0.850</td>
+    <td>72.39</td><td>0.720</td>
+    <td>86.09</td><td>0.865</td>
+    <td>78.47</td><td>0.848</td>
   </tr>
 </table>
