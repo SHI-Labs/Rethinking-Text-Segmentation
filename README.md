@@ -33,14 +33,54 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
 <table>
   <tr>
     <td></td>
-    <td colspan="2" text-align=center>TextSeg(Ours)</td>
-    <td colspan="2" style="text-align:center;">ICDAR13 FST</td>
-    <td colspan="2" style="text-align:center;">COCO_TS</td>
-    <td colspan="2" style="text-align:center;">MLT_S</td>
-    <td colspan="2" style="text-align:center;">Total-Text</td>
+    <td colspan="2">TextSeg(Ours)</td>
+    <td colspan="2">ICDAR13 FST</td>
+    <td colspan="2">COCO_TS</td>
+    <td colspan="2">MLT_S</td>
+    <td colspan="2">Total-Text</td>
   </tr>
   <tr>
     <td>Method</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+  </tr>
+  <tr>
+    <td>DeeplabV3+</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+  </tr>
+  <tr>
+    <td>HRNetV2-W48</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+  </tr>
+  <tr>
+    <td>HRNetV2-W48 + OCR</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+  </tr>
+  <tr>
+    <td>Ours: TexRNet + DeeplabV3+</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+    <td>fgIoU</td><td>F-score</td>
+  </tr>
+  <tr>
+    <td>Ours: TexRNet + HRNetV2-W48</td>
     <td>fgIoU</td><td>F-score</td>
     <td>fgIoU</td><td>F-score</td>
     <td>fgIoU</td><td>F-score</td>
