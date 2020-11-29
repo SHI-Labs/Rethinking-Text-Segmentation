@@ -30,14 +30,14 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 
 In this table, we report the performance of our TexRNet on 5 text segmentation dataset including ours. 
 
-<table style="text-align:center;">
+<table>
   <tr>
     <td></td>
-    <td colspan="2">TextSeg(Ours)</td>
-    <td colspan="2">ICDAR13 FST</td>
-    <td colspan="2">COCO_TS</td>
-    <td colspan="2">MLT_S</td>
-    <td colspan="2">Total-Text</td>
+    <td colspan="2" style="text-align:center;">TextSeg(Ours)</td>
+    <td colspan="2" style="text-align:center;">ICDAR13 FST</td>
+    <td colspan="2" style="text-align:center;">COCO_TS</td>
+    <td colspan="2" style="text-align:center;">MLT_S</td>
+    <td colspan="2" style="text-align:center;">Total-Text</td>
   </tr>
   <tr>
     <td>Method</td>
