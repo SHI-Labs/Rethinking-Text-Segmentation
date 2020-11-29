@@ -19,7 +19,7 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 ### Annotation
 
 <p align="center">
-  <img src=".figure/image_anno.jpg" width="80%">
+  <img src=".figure/image_anno.jpg" width="65%">
 </p>
 
 ### Dataset Statistic
