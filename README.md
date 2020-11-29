@@ -27,6 +27,6 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 ## TexRNet Structure and Results
 
 <p align="center">
-  <img src=".github/network.jpg" width="90%">
+  <img src=".figure/network.jpg" width="90%">
 </p>
 
