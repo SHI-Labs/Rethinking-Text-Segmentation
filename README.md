@@ -33,7 +33,7 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
 <table>
   <tr>
     <td></td>
-    <td colspan="2" style="text-align:center;">TextSeg(Ours)</td>
+    <td colspan="2" text-align=center>TextSeg(Ours)</td>
     <td colspan="2" style="text-align:center;">ICDAR13 FST</td>
     <td colspan="2" style="text-align:center;">COCO_TS</td>
     <td colspan="2" style="text-align:center;">MLT_S</td>
