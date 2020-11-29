@@ -30,10 +30,7 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 
 In this table, we report the performance of our TexRNet on 5 text segmentation dataset including ours. 
 
-.cTable td{
-  align:center;
-}
-<table, class="cTable">
+<table, style="text-align:center;">
   <tr>
     <td></td>
     <td colspan="2">TextSeg(Ours)</td>
