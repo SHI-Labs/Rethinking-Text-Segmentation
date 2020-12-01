@@ -90,3 +90,13 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
   </tr>
 </table>
 </font>
+
+## Bibtex
+```
+@article{xu2020rethinking,
+  title={Rethinking Text Segmentation: A Novel Dataset and A Text-Specific Refinement Approach},
+  author={Xu, Xingqian and Zhang, Zhifei and Wang, Zhaowen and Price, Brian and Wang, Zhonghao and Shi, Humphrey},
+  journal={arXiv preprint arXiv:2011.14021},
+  year={2020}
+}
+```
