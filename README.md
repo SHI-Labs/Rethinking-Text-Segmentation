@@ -2,7 +2,7 @@
 
 This is the repo to host the dataset TextSeg and code for TexRNet from the following paper:
 
-[Xingqian Xu](https://ifp-uiuc.github.io/), [Zhifei Zhang](http://web.eecs.utk.edu/~zzhang61/), [Zhaowen Wang](https://research.adobe.com/person/zhaowen-wang/), [Brain Price](https://research.adobe.com/person/brian-price/), [Zhonghao Wang](https://ifp-uiuc.github.io/) and [Humphrey Shi](https://www.humphreyshi.com), **Rethinking Text Segmentation: A Novel Dataset and A Text-Specific Refinement Approach**, [ArXiv Link](arxiv.org/abs/2011.14021) 
+[Xingqian Xu](https://ifp-uiuc.github.io/), [Zhifei Zhang](http://web.eecs.utk.edu/~zzhang61/), [Zhaowen Wang](https://research.adobe.com/person/zhaowen-wang/), [Brian Price](https://research.adobe.com/person/brian-price/), [Zhonghao Wang](https://ifp-uiuc.github.io/) and [Humphrey Shi](https://www.humphreyshi.com), **Rethinking Text Segmentation: A Novel Dataset and A Text-Specific Refinement Approach**, [ArXiv Link](arxiv.org/abs/2011.14021) 
 
 **Note:**
 Our dataset and code will be released here, stay tuned.
