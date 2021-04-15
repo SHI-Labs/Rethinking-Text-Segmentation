@@ -1,0 +1,14 @@
+/data
+/models
+/log
+/scripts
+/pretrained
+**/__pycache__
+**/.idea/*
+**/.vscode/*
+**/.ipynb_checkpoints/*
+**/old/*
+**/veryold/*
+*.ipynb
+**/build
+**/*.out
