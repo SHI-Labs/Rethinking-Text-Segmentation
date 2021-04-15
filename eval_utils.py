@@ -18,7 +18,7 @@ import PIL
 import copy
 from easydict import EasyDict as edict
 
-from lib import utils
+# from lib import utils
 from lib import nputils
 from lib import torchutils
 
@@ -30,11 +30,43 @@ from lib.cfg_helper import cfg_unique_holder as cfguh
 from lib.cfg_helper import experiment_folder, set_debug_cfg
 from lib.cfg_helper import common_argparse, common_initiates
 
+from lib.data_factory import \
+    get_dataset, collate, \
+    get_loader, get_transform, \
+    get_formatter, DistributedSampler
+
 from lib.log_service import print_log, torch_to_numpy
 from lib import evaluate_service as eva
-from lib.utils import eval
+from train_utils import exec_container
 
 cfguh().add_code(osp.basename(__file__))
+
+class eval(exec_container):
+    def prepare_dataloader(self):
+        cfg = cfguh().cfg
+        dataset = get_dataset()()
+        loader = get_loader()()
+        transforms = get_transform()()
+        formatter = get_formatter()()
+
+        evalset = dataset(
+            mode = cfg.DATA.DATASET_MODE, 
+            loader = loader, 
+            estimator = None, 
+            transforms = transforms, 
+            formatter = formatter,
+        )
+        sampler = DistributedSampler(
+            evalset, shuffle=False, extend=True)
+        evalloader = torch.utils.data.DataLoader(
+            evalset, batch_size = cfg.TEST.BATCH_SIZE_PER_GPU, 
+            sampler = sampler, 
+            num_workers = cfg.DATA.NUM_WORKERS_PER_GPU, 
+            drop_last = False, pin_memory = False,
+            collate_fn = collate(), 
+        )
+        return {
+            'dataloader' : evalloader,}
 
 def set_cfg(cfg, dsname):
     cfg.CUDA = True

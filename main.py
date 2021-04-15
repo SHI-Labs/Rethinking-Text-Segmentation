@@ -206,7 +206,7 @@ if __name__ == '__main__':
         trainer = train(cfg)
         trainer.register_stage(exec_ts)
 
-        trainer(0)
+        # trainer(0)
         mp.spawn(trainer,
                     args=(),
                     nprocs=cfg.GPU_COUNT,

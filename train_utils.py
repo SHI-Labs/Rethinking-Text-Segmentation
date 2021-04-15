@@ -18,7 +18,6 @@ import PIL
 import copy
 from easydict import EasyDict as edict
 
-from lib import utils
 from lib import nputils
 from lib import torchutils
 from lib import loss as myloss
@@ -680,23 +679,11 @@ class ts_with_classifier_base(ts):
         bbx[:, 2] /= osw
         bbx[:, 4] /= osw
 
-        # debug
-        # dddd = bbx[1, 1:5].to('cpu').detach().long().numpy()
-        # ddddd = pred[0, 1, dddd[0]:dddd[2], dddd[1]:dddd[3]]
-        # vis.quick_plot(ddddd.to('cpu').detach().numpy())
-
         if cfg.TRAIN.ROI_BBOX_PADDING_TYPE == 'semcrop':
             # the bbox have already been squared. 
             # no further action is needed.
             bbx_reordered = torch.stack(
                 [bbx[:, i] for i in [0, 2, 1, 4, 3]], dim=-1)
-
-            ##############
-            # manual bug #
-            ##############
-            # didn't swap w and h
-            # bbx_reordered = bbx[:, 0:5]
-
             # input bbx is <bs, w1, h1, w2, h2>
             # pred[:, 1:2] means we only get the fg part
             chpred = torchutils.roi_align(roi_size)(
@@ -725,12 +712,6 @@ class ts_with_classifier_base(ts):
 
             bbx_reordered = torch.stack(
                 [bbx_sq[:, i] for i in [0, 2, 1, 4, 3]], dim=-1)
-
-            ##############
-            # manual bug #
-            ##############
-            # didn't swap w and h
-            # bbx_reordered = bbx_sq[:, 0:5]
             
             chpred = torchutils.roi_align(roi_size)(
                 pred[:, 1:2], bbx_reordered)
@@ -746,9 +727,6 @@ class ts_with_classifier_base(ts):
             raise ValueError
 
         chpredcls = bbx[:, 5].long()
-
-        # if itern % 100 == 50:
-        #     vis.quick_plot(chpred[0, 0].cpu().detach().numpy())
 
         # compute the extra loss including the result from clsnet
         # do not update clsnet weight however. 
@@ -805,28 +783,6 @@ class ts_with_classifier_base(ts):
                 self.clsoptim.step()
             optimizer.zero_grad()
             loss_display['lossupdatecls'] = loss_display2['lossupdatecls']
-
-        # debug
-        # if (chpred.shape[0] > 1) & (itern >= act_after):
-        #     chpred, chpredcls = torch_to_numpy(chpred, chpredcls)
-        #     chpredclsname = [self.map[chi] for chi in chpredcls]
-        #     vis.ve_cls()(
-        #         figsize_base=2,
-        #         fn='debugA', 
-        #         image=chpred[0:12],
-        #         clsname = chpredclsname[0:12],
-        #         batch_size=1,
-        #         show=True)
-        # if chins.shape[0] > 1:
-        #     chins, chcls = torch_to_numpy(chins, chcls)
-        #     chclsname = [self.map[chi] for chi in chcls]
-        #     vis.ve_cls()(
-        #         figsize_base=2,
-        #         fn='debugB', 
-        #         image=chins, 
-        #         clsname = chclsname,
-        #         batch_size=1,
-        #         show=True)
 
         return {'item': loss_display}
 
