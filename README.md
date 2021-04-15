@@ -24,6 +24,10 @@ Text in the real world is extremely diverse, yet current text dataset does not r
   <img src=".figure/image_anno.jpg" width="65%">
 </p>
 
+### Download
+
+Our dataset (TextSeg) is academia-only and cannot be used on any commercial project and research. To download the data, please send a request email to *textseg.dataset@gmail.com* and tell us which school you are affiliated with. 
+
 ## TexRNet Structure and Results
 
 <p align="center">
@@ -93,6 +97,63 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
 </table>
 </font>
 
+## To run the code
+
+### Set up the environment
+```
+conda create -n texrnet python=3.7
+conda activate texrnet
+pip install -r requirement.txt
+```
+### To eval
+
+First, make the following directories to hold pre-trained models, dataset, and running logs:
+```
+mkdir ./pretrained
+mkdir ./data
+mkdir ./log
+```
+
+Second, download the models from [this link](https://drive.google.com/drive/folders/1EvGNvI5R6NKsW0YTy_0YHD9dpvtM0HDi?usp=sharing). Move those downloaded models to `./pretrained`. 
+
+Thrid, make sure that `./data` contains the data. A sample root directory for **TextSeg** would be `./data/TextSeg`.
+
+Lastly, evaluate the model and compute fgIoU/F-score with the following command: 
+```
+python main.py --eval --pth [model path] [--hrnet] [--gpu 0 1 ...] --dsname [dataset name]
+```
+
+Here is the sample command to eval a TexRNet_HRNet on TextSeg with 4 GPUs:
+```
+python main.py --eval --pth pretrained/texrnet_hrnet.pth --hrnet --gpu 0 1 2 3 --dsname textseg
+```
+
+The program will store results and execution log in `./log/eval`. 
+
+### To train
+
+Similarly, these directories need to be created:
+```
+mkdir ./pretrained
+mkdir ./pretrained/init
+mkdir ./data
+mkdir ./log
+```
+
+Second, we use multiple pre-trained models for training. Download these initial models from [this link](https://drive.google.com/drive/folders/1EvGNvI5R6NKsW0YTy_0YHD9dpvtM0HDi?usp=sharing). Move those models to `./pretrained/init`. Also, make sure that `./data` contains the data. 
+
+Lastly, execute the training code with the following command: 
+```
+python main.py [--hrnet] [--gpu 0 1 ...] --dsname [dataset name] [--trainwithcls]
+```
+
+Here is the sample command to train a TexRNet_HRNet on TextSeg with classifier and discriminate loss using 4 GPUs:
+```
+python main.py --hrnet --gpu 0 1 2 3 --dsname textseg --trainwithcls
+```
+
+The training configs, logs, and models will be stored in `./log/texrnet_[dsname]/[exid]_[signature]`.
+
 ## Bibtex
 ```
 @article{xu2020rethinking,
@@ -102,3 +163,7 @@ In this table, we report the performance of our TexRNet on 5 text segmentation d
   year={2020}
 }
 ```
+
+## Acknowledgements
+
+The directory `.\hrnet_code` is directly copied from the HRNet official github website [(link)](https://github.com/HRNet/HRNet-Semantic-Segmentation). HRNet code ownership should be credited to HRNet authors, and users should follow their terms of usage. 
