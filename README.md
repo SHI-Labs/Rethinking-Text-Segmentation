@@ -5,7 +5,12 @@ This is the repo to host the dataset TextSeg and code for TexRNet from the follo
 [Xingqian Xu](https://ifp-uiuc.github.io/), [Zhifei Zhang](http://web.eecs.utk.edu/~zzhang61/), [Zhaowen Wang](https://research.adobe.com/person/zhaowen-wang/), [Brian Price](https://research.adobe.com/person/brian-price/), [Zhonghao Wang](https://ifp-uiuc.github.io/) and [Humphrey Shi](https://www.humphreyshi.com), **Rethinking Text Segmentation: A Novel Dataset and A Text-Specific Refinement Approach**, [ArXiv Link](arxiv.org/abs/2011.14021) 
 
 **Note:**
+<!--
 Our dataset and code are released, please send in a request for dataset download.
+-->
+<s>\[2021.04.21\] So far, our dataset is partially released with images and semantic labels. Since many people may request the dataset for OCR or non-segmentation tasks, please stay tuned, and we will release the dataset in full ASAP.</s>
+
+\[2021.06.18\] **Our dataset is now fully released.** To download the data, please send a request email to *textseg.dataset@gmail.com* and tell us which school you are affiliated with. Please be aware the released dataset is **version 2**, and the annotations are slightly different from the one in the paper. In order to provide the most accurate dataset, we went through a second round of quality assurance, in which we fixed some faulty annotations and made them more consistent across the dataset. Since our TexRNet in the paper doesn't use OCR and character instance labels (*i.e.* word- and character-level bounding polygons; character-level masks;), we will not release the older version of these labels. However, we release the retroactive *semantic_label_v1.tar.gz* for researchers to reproduce the result in the paper. For more details about the dataset, please see below.
 
 ## Introduction
 Text in the real world is extremely diverse, yet current text dataset does not reflect such diversity very well. To bridge this gap, we proposed TextSeg, a large-scale fine-annotated and multi-purpose text dataset, collecting scene and design text with six types of annotations: word- and character-wise bounding polygons, masks and transcriptions. We also introduce Text Refinement Network (TexRNet), a novel text segmentation approach that adapts to the unique properties of text, e.g. non-convex boundary, diverse texture, etc., which often impose burdens on traditional segmentation models. TexRNet refines results from common segmentation approach via key features pooling and attention, so that wrong-activated text regions can be adjusted. We also introduce trimap and discriminator losses that show significant improvement on text segmentation. 
@@ -27,6 +32,19 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 ### Download
 
 Our dataset (TextSeg) is academia-only and cannot be used on any commercial project and research. To download the data, please send a request email to *textseg.dataset@gmail.com* and tell us which school you are affiliated with. 
+
+A full download should contain these files:
+
+* ```image.tar.gz``` contains 4024 images.
+* ```annotation.tar.gz``` labels corresponding to the images. These three types of files are included:
+  * ```[dataID]_anno.json``` contains all word- and character-level translations and bounding polygons.
+  * ```[dataID]_mask.png``` contains all character masks. Character mask label value will be ordered from 1 to n. Label value 0 means background, 255 means ignore. 
+  * ```[dataID]_maskeff.png``` contains all character masks **with effect**. 
+  * ```Adobe_Research_License_TextSeg.txt``` license file.
+* ```semantic_label.tar.gz``` contains all word-level (semantic-level) masks. It contains:
+  * ```[dataID]_maskfg.png``` 0 means background, 100 means word, 200 means word-effect, 255 means ignore. (The ```[dataID]_maskfg.png``` can also be generated using ```[dataID]_mask.png``` and ```[dataID]_maskeff.png```)
+* ```split.json``` the official split of train, val and test.
+* [Optional] ```semantic_label_v1.tar.gz``` the old version of label that was used in our paper. One can download it to reproduce our paper results.
 
 ## TexRNet Structure and Results
 
