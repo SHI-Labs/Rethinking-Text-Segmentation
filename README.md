@@ -31,7 +31,7 @@ Text in the real world is extremely diverse, yet current text dataset does not r
 
 ### Download
 
-Our dataset (TextSeg) is academia-only and cannot be used on any commercial project and research. To download the data, please send a request email to *textseg.dataset@gmail.com* and tell us which school you are affiliated with. 
+Our dataset (TextSeg) is academia-only and cannot be used on any commercial project and research. To download the data, please download at https://drive.google.com/drive/folders/1tNyOBTbHeWAhpV9TFUFd3jF3LetkZMfW?usp=sharing. 
 
 A full download should contain these files:
 
